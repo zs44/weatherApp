@@ -1,8 +1,47 @@
-h2{
+body{
+  font-family: Google Sans, arial, sans-serif;
+}
+h3{
   display: inline;
 }
+
 .ulclass{
     list-style: none;
+    padding: 0px;
+      color: rgb(112, 117, 122);
+font-family: arial, sans-serif;
+font-size: 12px;
+font-weight: 400;
+line-height: 16px;
 
-  
+}
+.ulclass2{
+    list-style: none;
+    padding: 0px;
+    text-align: right;
+    
+
+}
+.liclass1{
+  color: rgb(32, 33, 36);
+font-family: Google Sans, arial, sans-serif;
+font-size: 22px;
+font-weight: 400;
+line-height: 26px;
+text-align: right
+}
+.liclass2{
+  color: rgb(112, 117, 122);
+font-family: arial, sans-serif;
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+text-align: right
+}
+.weather-app{
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid #DADCE0;
+  border-radius: 10px;
 }
