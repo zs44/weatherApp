@@ -26,8 +26,15 @@ function displayTemp(response) {
   descriptionElm.innerHTML = response.data.weather[0].description;
   let humidityElm = document.querySelector("#Humidity");
   humidityElm.innerHTML = response.data.main.humidity;
-  let WindElm = document.querySelector("#Wind");
-  WindElm.innerHTML = response.data.wind.speed;
+  let windElm = document.querySelector("#Wind");
+  windElm.innerHTML = response.data.wind.speed;
   let dateElm = document.querySelector("#date");
   dateElm.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElm = document.querySelector("#icon");
+  iconElm.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  let altElm = document.querySelector("#alt");
+  altElm.setAttribute("alt", response.data.weather[0].description);
 }
