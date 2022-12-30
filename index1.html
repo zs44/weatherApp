@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/style1.css" />
     <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       rel="stylesheet"
@@ -38,15 +38,19 @@
             </div>
           </form>
           <div class="row d-flex">
-            <div class="col-3">
+            <div class="col-5">
               <div class="d-flex weather-temprature">
-                <img src="" class="float-left" id="icon" />
+                <img src="" class="float-left " id="icon" />
 
                 <div class="float-left">
                   <strong id="temp"></strong>
                 </div>
                 <div class="float-left">
-                  °<a href="">C</a> | °<a href="">F</a>
+                  <span class="units"
+                    >°<a href="#" id="cel">C</a> | °<a href="#" id="fahrenheit"
+                      >F</a
+                    >
+                  </span>
                 </div>
               </div>
             </div>
@@ -74,6 +78,6 @@
       </div>
     </div>
 
-    <script src="src/app.js"></script>
+    <script src="src/app1.js"></script>
   </body>
 </html>

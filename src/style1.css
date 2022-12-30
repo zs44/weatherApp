@@ -32,7 +32,6 @@ ul {
   text-align: right;
 }
 
-
 .liclass2 {
   color: rgb(112, 117, 122);
   font-family: arial, sans-serif;
@@ -41,10 +40,8 @@ ul {
   line-height: 20px;
   text-align: right;
 }
-.liclass2:first-letter{
-    text-transform: capitalize;
-
-
+.liclass2:first-letter {
+  text-transform: capitalize;
 }
 .weather-app-wrapper {
   max-width: 800px;
@@ -59,8 +56,19 @@ ul {
   color: rgb(32, 33, 36);
   display: inline;
   font-family: Google Sans, arial, sans-serif;
-  font-size: 48px;
+  font-size: 38px;
   font-weight: 400;
   letter-spacing: normal;
   line-height: 56px;
+}
+.weather-temprature .active{
+  color: black;
+  cursor: default;
+
+}
+.weather-temprature .active:hover{
+  text-decoration: none;
+}
+#icon{
+  margin-top: -17px;
 }

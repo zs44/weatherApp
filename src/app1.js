@@ -1,4 +1,3 @@
-
 function formatDate(timeStamp) {
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
@@ -9,9 +8,9 @@ function formatDate(timeStamp) {
   if (minute < 10) {
     minute = `0${minute}`;
   }
-if (hour < 10) {
-  hour = `0${hour}`;
-}
+  if (hour < 10) {
+    hour = `0${hour}`;
+  }
   return `${day} ${hour}:${minute}`;
 }
 function displayTemp(response) {
@@ -33,6 +32,7 @@ function displayTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElm.setAttribute("alt", response.data.weather[0].description);
+  celsiusTemprature = Math.round(response.data.main.temp);
 }
 function search(city) {
   let apiKey = "dc913128ccaa43cdc1ca63d7d482beef";
@@ -44,8 +44,35 @@ function search(city) {
 function handleSubmit(event) {
   event.preventDefault();
   cityinputElm = document.querySelector("#city-input");
+
   search(cityinputElm.value);
-  
 }
+function displayFahrenheit(event) {
+  event.preventDefault();
+  celsiusElm.classList.remove("active");
+  fahrenheitElm.classList.add("active");
+ // alert("fff");
+  let tempElm = document.querySelector("#temp");
+  let fahrenheitTemp = (celsiusTemprature * 9) / 5 + 32;
+  tempElm.innerHTML = fahrenheitTemp;
+}
+function displayCelsius(event) {
+  event.preventDefault();
+    //alert(celsiusTemprature);
+
+  celsiusElm.classList.add("active");
+ fahrenheitElm.classList.remove("active");
+  let tempElm2 = document.querySelector("#temp");
+  tempElm2.innerHTML = Math.round(celsiusTemprature);
+}
+celsiusTemprature = null;
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
+
+let fahrenheitElm = document.querySelector("#fahrenheit");
+fahrenheitElm.addEventListener("click", displayFahrenheit);
+
+let celsiusElm = document.querySelector("#cel");
+celsiusElm.addEventListener("click", displayCelsius);
+search("Tehran");
