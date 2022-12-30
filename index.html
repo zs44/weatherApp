@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WeatherApp</title>
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
@@ -17,36 +18,35 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <div class="row">
+          <div class="row d-flex justify-content-center">
             <div class="col-3">
-              <div class="clearfix weather-temprature">
+              <div class="d-flex weather-temprature">
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                   class="float-left"
                 />
 
                 <div class="float-left">
-                  <strong>12</strong> 
+                  <strong id="temp"></strong>
                 </div>
                 <div class="float-left">
-                                    °<a href="">C</a> | °<a href="">F</a>
-
+                  °<a href="">C</a> | °<a href="">F</a>
                 </div>
               </div>
             </div>
             <div class="col-3">
               <ul class="ulclass">
                 <li>Precipitation: 0%</li>
-                <li>Humidity: 54%</li>
-                <li>Wind: 18 km/h</li>
+                <li>Humidity: <span id="Humidity"></span>%</li>
+                <li>Wind: <span id="Wind"></span>Km/H</li>
               </ul>
             </div>
 
             <div class="col-3">
               <ul class="ulclass2">
-                <li class="liclass1">Tehran Province</li>
+                <li id="city" class="liclass1"></li>
                 <li class="liclass2">Thursday 10:00</li>
-                <li class="liclass2">Mostly sunny</li>
+                <li id="description" class="liclass2"></li>
               </ul>
             </div>
           </div>
