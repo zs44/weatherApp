@@ -18,15 +18,29 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <div class="weather-app">
-          <div class="row d-flex justify-content-center">
+          <form id="search-form" class="mb-5">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="Search"
+                  placeholder="Type city name..."
+                  class="form-control"
+                  id="city-input"
+                />
+              </div>
+              <div class="col-3">
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="row d-flex">
             <div class="col-3">
               <div class="d-flex weather-temprature">
-                <img
-                  src=""
-                  class="float-left"
-                  id="icon"
-                  alt=""
-                />
+                <img src="" class="float-left" id="icon" />
 
                 <div class="float-left">
                   <strong id="temp"></strong>

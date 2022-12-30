@@ -1,7 +1,4 @@
-let apiKey = "dc913128ccaa43cdc1ca63d7d482beef";
-let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}`;
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemp);
+
 function formatDate(timeStamp) {
   let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
 
@@ -35,6 +32,20 @@ function displayTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  let altElm = document.querySelector("#alt");
-  altElm.setAttribute("alt", response.data.weather[0].description);
+  iconElm.setAttribute("alt", response.data.weather[0].description);
 }
+function search(city) {
+  let apiKey = "dc913128ccaa43cdc1ca63d7d482beef";
+  let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayTemp);
+
+  console.log(apiUrl);
+}
+function handleSubmit(event) {
+  event.preventDefault();
+  cityinputElm = document.querySelector("#city-input");
+  search(cityinputElm.value);
+  
+}
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
