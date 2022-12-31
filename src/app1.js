@@ -1,5 +1,5 @@
 function formatDate(timeStamp) {
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday","Saturday"];
 
   let date = new Date(timeStamp);
   let day = days[date.getDay()];
@@ -11,6 +11,7 @@ function formatDate(timeStamp) {
   if (hour < 10) {
     hour = `0${hour}`;
   }
+  alert(day);
   return `${day} ${hour}:${minute}`;
 }
 function displayTemp(response) {
