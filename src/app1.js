@@ -11,7 +11,6 @@ function formatDate(timeStamp) {
   if (hour < 10) {
     hour = `0${hour}`;
   }
-  alert(day);
   return `${day} ${hour}:${minute}`;
 }
 function displayTemp(response) {
@@ -40,7 +39,6 @@ function search(city) {
   let apiUrl = ` https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
   axios.get(apiUrl).then(displayTemp);
 
-  console.log(apiUrl);
 }
 function handleSubmit(event) {
   event.preventDefault();
@@ -52,14 +50,12 @@ function displayFahrenheit(event) {
   event.preventDefault();
   celsiusElm.classList.remove("active");
   fahrenheitElm.classList.add("active");
- // alert("fff");
   let tempElm = document.querySelector("#temp");
   let fahrenheitTemp = (celsiusTemprature * 9) / 5 + 32;
   tempElm.innerHTML = fahrenheitTemp;
 }
 function displayCelsius(event) {
   event.preventDefault();
-    //alert(celsiusTemprature);
 
   celsiusElm.classList.add("active");
  fahrenheitElm.classList.remove("active");
